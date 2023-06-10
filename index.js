@@ -1,11 +1,28 @@
+// ⬇️ EVENT HANDLERS ⬇️
+
+async function getCryptoData() {
+    const response = await fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
+
+    if (!response.ok) {
+        console.log(response.status, response.statusText)
+    } else {
+        const jsonData = await response.json()
+        console.log(jsonData)
+    }
+}
+
 // ⬇️ RENDER APP ⬇️
 
 async function renderBackgroundImage() {
     const response = await fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     const jsonData = await response.json()
-    document.body.style.backgroundImage = `url(${jsonData.urls.regular})`
 
-    renderArtistName(jsonData.user.name)
+    if (jsonData.errors) {
+        renderDefaultBackgroundImage()
+    } else {
+        document.body.style.backgroundImage = `url(${jsonData.urls.regular})`
+        renderArtistName(jsonData.user.name)
+    }
 }
 
 async function renderArtistName(name) {
@@ -17,4 +34,5 @@ function renderDefaultBackgroundImage() {
     document.getElementById("artist-name").textContent = `By: Simon Berger`
 }
 
-renderBackgroundImage().catch(renderDefaultBackgroundImage)
+renderBackgroundImage()
+getCryptoData()
