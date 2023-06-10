@@ -6,7 +6,6 @@ let cryptoData = []
 async function getAllCryptoData() {
     cryptoData = []
     await Promise.all(cryptos.map(crypto => getCryptoData(crypto)))
-    // console.log(cryptoData)
     renderCrypto(cryptoData)
 }
 
@@ -46,7 +45,6 @@ function renderDefaultBackgroundImage() {
 
 function renderCrypto(data) {
     let cryptoString = ""
-    // console.log("CRYPTO", data)
 
     data.forEach(item => {
         cryptoString += `
@@ -59,6 +57,7 @@ function renderCrypto(data) {
             </div>
         `
     })
+
     document.getElementById("crypto-container").innerHTML = cryptoString
 }
 
