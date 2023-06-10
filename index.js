@@ -1,3 +1,5 @@
+const cryptoContainer = document.getElementById("crypto-container")
+
 // ⬇️ EVENT HANDLERS ⬇️
 
 async function getCryptoData() {
@@ -7,7 +9,7 @@ async function getCryptoData() {
         console.log(response.status, response.statusText)
     } else {
         const jsonData = await response.json()
-        console.log(jsonData)
+        renderCrypto(jsonData)
     }
 }
 
@@ -32,6 +34,16 @@ async function renderArtistName(name) {
 function renderDefaultBackgroundImage() {
     document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1535961652354-923cb08225a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODYzNTU3NDh8&ixlib=rb-4.0.3&q=80&w=1080)`
     document.getElementById("artist-name").textContent = `By: Simon Berger`
+}
+
+function renderCrypto(data) {
+    console.log("CRYPTO", data)
+    cryptoContainer.innerHTML = `
+        <div class="currency">    
+            <img src="${data.image.small}">
+            <div>${data.name}</div>
+        </div>
+    `
 }
 
 renderBackgroundImage()

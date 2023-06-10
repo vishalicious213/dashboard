@@ -29,6 +29,17 @@ header {
     justify-content: space-between;
 }
 
+.currency {
+    /* outline: 1px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+.currency img {
+    width: 20%;
+    margin-right: 1rem;
+}
+
 /* MAIN */
 
 main {
