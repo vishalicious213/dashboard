@@ -3,6 +3,12 @@ let cryptoData = []
 
 // ⬇️ EVENT HANDLERS ⬇️
 
+async function getAllCryptoData() {
+    cryptoData = []
+    await Promise.all(cryptos.map(crypto => getCryptoData(crypto)))
+    console.log(cryptoData)
+}
+
 async function getCryptoData(coin) {
     const response = await fetch(`https://api.coingecko.com/api/v3/coins/${coin}`)
 
@@ -10,9 +16,7 @@ async function getCryptoData(coin) {
         console.log(response.status, response.statusText)
     } else {
         const jsonData = await response.json()
-        // renderCrypto(jsonData)
         cryptoData.push(jsonData)
-        console.log(cryptoData)
     }
 }
 
@@ -56,4 +60,5 @@ function renderCrypto(data) {
 }
 
 renderBackgroundImage()
-cryptos.forEach(getCryptoData)
+// cryptos.forEach(getCryptoData)
+getAllCryptoData()
