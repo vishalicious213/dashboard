@@ -41,7 +41,10 @@ function renderCrypto(data) {
     cryptoContainer.innerHTML = `
         <div class="currency">    
             <img src="${data.image.small}">
-            <div>${data.name}</div>
+            <div class="crypto-name">${data.name}</div>
+            <div class="crypto-price">$${data.market_data.current_price.usd}</div>
+            <div class="crypto-high">▲$${data.market_data.high_24h.usd}</div>
+            <div class="crypto-low">▼$${data.market_data.low_24h.usd}</div>
         </div>
     `
 }
