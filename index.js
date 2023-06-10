@@ -6,7 +6,8 @@ let cryptoData = []
 async function getAllCryptoData() {
     cryptoData = []
     await Promise.all(cryptos.map(crypto => getCryptoData(crypto)))
-    console.log(cryptoData)
+    // console.log(cryptoData)
+    renderCrypto(cryptoData)
 }
 
 async function getCryptoData(coin) {
@@ -45,20 +46,21 @@ function renderDefaultBackgroundImage() {
 
 function renderCrypto(data) {
     let cryptoString = ""
-    console.log("CRYPTO", data)
+    // console.log("CRYPTO", data)
 
-    cryptoString += `
-    <div class="currency">    
-        <img src="${data.image.small}">
-        <div class="crypto-name">${data.name}</div>
-        <div class="crypto-price">$${data.market_data.current_price.usd}</div>
-        <div class="crypto-high">▲$${data.market_data.high_24h.usd}</div>
-        <div class="crypto-low">▼$${data.market_data.low_24h.usd}</div>
-    </div>
-`
+    data.forEach(item => {
+        cryptoString += `
+            <div class="currency">    
+                <img src="${item.image.small}">
+                <div class="crypto-name">${item.name}</div>
+                <div class="crypto-price">$${item.market_data.current_price.usd}</div>
+                <div class="crypto-high">▲$${item.market_data.high_24h.usd}</div>
+                <div class="crypto-low">▼$${item.market_data.low_24h.usd}</div>
+            </div>
+        `
+    })
     document.getElementById("crypto-container").innerHTML = cryptoString
 }
 
 renderBackgroundImage()
-// cryptos.forEach(getCryptoData)
 getAllCryptoData()

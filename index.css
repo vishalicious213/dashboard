@@ -33,9 +33,10 @@ header {
     /* outline: 1px solid red; */
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, .15);
+    background-color: rgba(0, 0, 0, .5);
     border-radius: 1rem;
     padding: .25rem;
+    margin-bottom: .2rem;
     font-size: .75rem;
 }
 
@@ -52,15 +53,23 @@ header {
 .crypto-price {
     color: lime;
     margin-right: .75rem;
+    /* outline: 1px solid red; */
+    width: 5rem;
 }
 
 .crypto-high {
     color: dodgerblue;
     margin-right: .75rem;
+    /* outline: 1px solid red; */
+    width: 5rem;
+
 }
 
 .crypto-low {
-    color: crimson
+    color: red;
+    /* outline: 1px solid red; */
+    width: 5rem;
+
 }
 
 /* MAIN */
