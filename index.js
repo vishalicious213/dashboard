@@ -1,15 +1,18 @@
-const cryptoContainer = document.getElementById("crypto-container")
+const cryptos = ["bitcoin", "dogecoin", "ethereum", "litecoin"]
+let cryptoData = []
 
 // ⬇️ EVENT HANDLERS ⬇️
 
-async function getCryptoData() {
-    const response = await fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
+async function getCryptoData(coin) {
+    const response = await fetch(`https://api.coingecko.com/api/v3/coins/${coin}`)
 
     if (!response.ok) {
         console.log(response.status, response.statusText)
     } else {
         const jsonData = await response.json()
-        renderCrypto(jsonData)
+        // renderCrypto(jsonData)
+        cryptoData.push(jsonData)
+        console.log(cryptoData)
     }
 }
 
@@ -37,17 +40,20 @@ function renderDefaultBackgroundImage() {
 }
 
 function renderCrypto(data) {
+    let cryptoString = ""
     console.log("CRYPTO", data)
-    cryptoContainer.innerHTML = `
-        <div class="currency">    
-            <img src="${data.image.small}">
-            <div class="crypto-name">${data.name}</div>
-            <div class="crypto-price">$${data.market_data.current_price.usd}</div>
-            <div class="crypto-high">▲$${data.market_data.high_24h.usd}</div>
-            <div class="crypto-low">▼$${data.market_data.low_24h.usd}</div>
-        </div>
-    `
+
+    cryptoString += `
+    <div class="currency">    
+        <img src="${data.image.small}">
+        <div class="crypto-name">${data.name}</div>
+        <div class="crypto-price">$${data.market_data.current_price.usd}</div>
+        <div class="crypto-high">▲$${data.market_data.high_24h.usd}</div>
+        <div class="crypto-low">▼$${data.market_data.low_24h.usd}</div>
+    </div>
+`
+    document.getElementById("crypto-container").innerHTML = cryptoString
 }
 
 renderBackgroundImage()
-getCryptoData()
+cryptos.forEach(getCryptoData)
