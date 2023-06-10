@@ -30,7 +30,6 @@ header {
 }
 
 .currency {
-    /* outline: 1px solid red; */
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, .5);
@@ -46,28 +45,24 @@ header {
 }
 
 .crypto-name {
-    /* outline: 1px solid red; */
     width: 5rem;
 }
 
 .crypto-price {
     color: lime;
     margin-right: .75rem;
-    /* outline: 1px solid red; */
     width: 5rem;
 }
 
 .crypto-high {
     color: dodgerblue;
     margin-right: .75rem;
-    /* outline: 1px solid red; */
     width: 5rem;
 
 }
 
 .crypto-low {
     color: red;
-    /* outline: 1px solid red; */
     width: 5rem;
 
 }
