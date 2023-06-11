@@ -95,7 +95,6 @@ function renderTime(time) {
 function renderWeather(data) {
     const weatherContainer = document.getElementById("weather-container")
     console.log(data)
-    console.log(data.weather[0].icon)
 
     weatherContainer.innerHTML = `
         <div id="weather">
