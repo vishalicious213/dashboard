@@ -28,22 +28,22 @@ function getCurrentTime() {
 async function getWeather() {
     try {
         const position = await new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(resolve, reject);
-        });
+            navigator.geolocation.getCurrentPosition(resolve, reject)
+        })
 
         let lat = position.coords.latitude
         let lon = position.coords.longitude
 
-        const response = await fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial`);
+        const response = await fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial`)
 
         if (!response.ok) {
-            throw new Error("Weather data not available");
+            throw new Error("Weather data not available")
         }
 
-        const data = await response.json();
-        console.log(data);
+        const data = await response.json()
+        renderWeather(data)
     } catch (error) {
-        console.error(error);
+        console.error(error)
     }
 }
 
@@ -90,6 +90,16 @@ function renderCrypto(data) {
 
 function renderTime(time) {
     document.getElementById("time").textContent = time
+}
+
+function renderWeather(data) {
+    const weatherContainer = document.getElementById("weather-container")
+    console.log(data)
+    console.log(data.weather[0].icon)
+
+    weatherContainer.innerHTML = `
+        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png">
+    `
 }
 
 renderBackgroundImage()
