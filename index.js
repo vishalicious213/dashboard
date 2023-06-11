@@ -99,6 +99,8 @@ function renderWeather(data) {
 
     weatherContainer.innerHTML = `
         <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png">
+        <div id="city">${data.name}</div>
+        <div id="temp">${data.main.temp}</div>
     `
 }
 
