@@ -72,4 +72,4 @@ function renderTime(time) {
 
 renderBackgroundImage()
 getAllCryptoData()
-getCurrentTime()
+setInterval(getCurrentTime, 1000)
