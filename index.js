@@ -22,7 +22,7 @@ async function getCryptoData(coin) {
 
 function getCurrentTime() {
     const time = new Date
-    console.log(time.toLocaleTimeString("en-us", {timeStyle: "medium"}))
+    renderTime(time.toLocaleTimeString("en-us", {timeStyle: "medium"}))
 }
 
 // ⬇️ RENDER APP ⬇️
@@ -64,6 +64,10 @@ function renderCrypto(data) {
     })
 
     document.getElementById("crypto-container").innerHTML = cryptoString
+}
+
+function renderTime(time) {
+    document.getElementById("time").textContent = time
 }
 
 renderBackgroundImage()
