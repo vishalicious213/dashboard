@@ -25,10 +25,14 @@ function getCurrentTime() {
     renderTime(time.toLocaleTimeString("en-us", {timeStyle: "medium"}))
 }
 
-function getWeather() {
+function getLocation() {
     navigator.geolocation.getCurrentPosition(position => {
         console.log(position)
     })
+}
+
+async function getWeather() {
+    getLocation()
 }
 
 // ⬇️ RENDER APP ⬇️
