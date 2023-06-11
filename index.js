@@ -25,6 +25,12 @@ function getCurrentTime() {
     renderTime(time.toLocaleTimeString("en-us", {timeStyle: "medium"}))
 }
 
+function getWeather() {
+    navigator.geolocation.getCurrentPosition(position => {
+        console.log(position)
+    })
+}
+
 // ⬇️ RENDER APP ⬇️
 
 async function renderBackgroundImage() {
@@ -73,3 +79,4 @@ function renderTime(time) {
 renderBackgroundImage()
 getAllCryptoData()
 setInterval(getCurrentTime, 1000)
+getWeather()
