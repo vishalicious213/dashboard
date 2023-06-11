@@ -98,9 +98,11 @@ function renderWeather(data) {
     console.log(data.weather[0].icon)
 
     weatherContainer.innerHTML = `
-        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png">
+        <div id="weather">
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png">
+            <div id="temp">${Math.round(data.main.temp)}ºF</div>
+        </div>
         <div id="city">${data.name}</div>
-        <div id="temp">${Math.round(data.main.temp)}ºF</div>
     `
 }
 
