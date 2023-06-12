@@ -22,14 +22,6 @@ body {
     padding: 1rem;
 }
 
-/* HEADER */
-
-header {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-}
-
 /* HEADER - CRYPTO */
 
 #crypto-container {
