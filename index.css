@@ -136,14 +136,25 @@ main {
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 500px) {
-    header {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 1rem;
+@media screen and (min-width: 400px) {
+    #crypto-container {
+        grid-template-columns: 1fr;
     }
 
-    #weather-container {
-        margin-top: 0;
+    .currency {
+        grid-template-rows: 1fr;
+        grid-template-columns: .5fr .5fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "img name price high low";
+        align-items: center;
     }
-  }
+
+    .currency img {
+        align-self: auto;
+        width: 50%;
+    }
+
+    .crypto-name {
+        margin-left: -1.5rem;
+    }
+}
