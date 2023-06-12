@@ -98,10 +98,15 @@ function renderWeather(data) {
 
     weatherContainer.innerHTML = `
         <div id="weather">
-            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png">
-            <div id="temp">${Math.round(data.main.temp)}ºF</div>
+            <div id="temp-img">
+                <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png">
+                <div id="temp">${Math.round(data.main.temp)}ºF</div>
+            </div>
+            <div>
+                <div id="desc">${data.weather[0].description}</div>
+                <div id="city">${data.name}</div>
+            </div>
         </div>
-        <div id="city">${data.name}</div>
     `
 }
 

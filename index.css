@@ -82,22 +82,29 @@ body {
 }
 
 #weather {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 1rem;
+    align-items: center;
+    padding: 0 .75rem;
+}
+
+#temp-img {
     display: flex;
     align-items: center;
-    margin: 0;
-    background-color: rgba(0, 0, 0, .5);
-    padding: 0 .75rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+}
+
+#desc {
+    text-align: end;
+}
+
+#desc::first-letter {
+    text-transform: capitalize;
 }
 
 #city {
-    margin: 0;
     text-align: end;
-    background-color: rgba(0, 0, 0, .5);
-    padding: 0 .75rem .75rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
 }
 
 /* MAIN */
