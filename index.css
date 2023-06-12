@@ -32,9 +32,16 @@ header {
 
 /* HEADER - CRYPTO */
 
+#crypto-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .25rem .5rem;
+}
+
 .currency {
     /* outline: 1px solid red; */
-    margin-bottom: 1rem;
+    /* width: 45%; */
+    /* margin: 0 1rem .5rem 0; */
     display: grid;
     grid-template-rows: 1.5rem 1.25rem 1.25rem 1.25rem;
     grid-template-columns: 4rem 1rem;
