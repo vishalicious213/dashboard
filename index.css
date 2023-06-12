@@ -87,12 +87,16 @@ body {
     background-color: rgba(0, 0, 0, .5);
     border-radius: 1rem;
     align-items: center;
-    padding: 0 .75rem;
+    padding: 0 .75rem .75rem;
 }
 
 #temp-img {
     display: flex;
     align-items: center;
+}
+
+#temperatures {
+    padding-left: 1rem;
 }
 
 #desc {
