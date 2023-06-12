@@ -111,6 +111,7 @@ function renderWeather(data) {
             <div class="weather-section">
                 <div class="desc">Feels like: ${Math.round(data.main.feels_like)}ºF</div>
                 <div id="desc" class="desc">${data.weather[0].description}</div>
+                <div class="desc">Humidity: ${data.main.humidity}</div>
                 <div id="city" class="desc">${data.name}</div>
             </div>
         </div>
