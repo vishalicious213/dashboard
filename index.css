@@ -99,6 +99,14 @@ body {
     padding-left: 1rem;
 }
 
+#temp-hi {
+    color: hotpink;
+}
+
+#temp-lo {
+    color: lightskyblue;
+}
+
 #desc {
     text-align: end;
 }
