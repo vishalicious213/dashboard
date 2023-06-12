@@ -107,16 +107,12 @@ body {
     color: lightskyblue;
 }
 
-#desc {
+.desc {
     text-align: end;
 }
 
 #desc::first-letter {
     text-transform: capitalize;
-}
-
-#city {
-    text-align: end;
 }
 
 /* MAIN */
