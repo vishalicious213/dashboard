@@ -28,26 +28,30 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: .25rem .5rem;
+    box-sizing: border-box;
 }
 
 .currency {
-    /* outline: 1px solid red; */
     display: grid;
     grid-template-rows: 1.5rem 1.25rem 1.25rem 1.25rem;
-    grid-template-columns: 4rem 1rem;
+    grid-template-columns: .5fr 1fr;
     grid-template-areas: 
         "img name  name  name"
         "img price price price"
         "img high  high  high"
         "img low   low   low";
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .4);
     border-radius: 1rem;
     padding: .5rem;
-    font-size: .75rem;
+    font-size: .9rem;
+    box-sizing: border-box;
+    gap: 0 .5rem;
 }
 
 .currency img {
     grid-area: img;
+    width: 100%;
+    align-self: center;
 }
 
 .crypto-name {
@@ -60,13 +64,13 @@ body {
 }
 
 .crypto-high {
-    color: dodgerblue;
+    color: lightskyblue;
     grid-area: high;
 
 }
 
 .crypto-low {
-    color: red;
+    color: hotpink;
     grid-area: low;
 
 }
