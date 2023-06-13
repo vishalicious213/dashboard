@@ -159,14 +159,20 @@ main {
     }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 750px) {
     header {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
         gap: 5rem;
     }
 
     #weather-container {
         margin-top: 0;
+        max-width: 16rem;
+        justify-self: flex-end;
+    }
+
+    #crypto-container {
+        max-width: 30rem;
     }
 }
