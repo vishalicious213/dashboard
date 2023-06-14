@@ -153,6 +153,10 @@ main {
     .crypto-name {
         margin-left: -1.5rem;
     }
+
+    #time {
+        font-size: 4rem;
+    }
 }
 
 @media screen and (min-width: 750px) {
@@ -170,5 +174,9 @@ main {
 
     #crypto-container {
         max-width: 30rem;
+    }
+
+    #time {
+        font-size: 5rem;
     }
 }
