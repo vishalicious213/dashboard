@@ -5,3 +5,36 @@ This is the 4th project in Module 9 (Working with APIs) of Scrimba's [Frontend D
 The course uses the `fetch` API along with `.then` and `.catch` methods to write asynchronous JavaScript to get data from external APIs and handle any errors. I took a different approach and upgraded from `.then` and `.catch` to using `async` and `await` to write asynchronous functions. My version is responsive, as well. It additionally includes a `manifest.json` file so that it can be imported into Chrome as a Chrome extension.
 
 Deployed at: https://vish213-crypto-weather-dashboard.netlify.app/
+
+## JavaScript concepts
+
+- variables
+- functions
+- asynchronous functions
+    - async
+    - await
+    - Promise.all
+    - try/catch
+- fetch()
+- if/else statements
+- arrays
+    - .forEach()
+    - .map()
+    - .push()
+- string template literals
+- Date
+    - .toLocaleTimeString()
+- navigator
+    - .geolocation
+        - .getCurrentPosition()
+- throw
+    - Error
+- console.error
+- document
+    - .style
+        - .backgroundImage
+    - .getElementById()
+        - .innerHTML
+        - .textContent
+- Math
+    - .round()
