@@ -7,6 +7,7 @@ The course uses the `fetch` API along with `.then` and `.catch` methods to write
 My version is responsive, as well, leaning into __CSS Grid__ for much of it's layout and __CSS Flexbox__ for simpler layout needs. It additionally includes a `manifest.json` file so that it can be imported into Chrome as a Chrome extension.
 
 ![](./img/screenshot-1.jpg)
+
 ![](./img/screenshot-2.jpg)
 
 Deployed at: https://vish213-crypto-weather-dashboard.netlify.app/
