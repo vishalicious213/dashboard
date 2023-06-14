@@ -78,7 +78,7 @@ function renderCrypto(data) {
             <div class="currency">    
                 <img src="${item.image.small}">
                 <div class="crypto-name">${item.name}</div>
-                <div class="crypto-price">►$${item.market_data.current_price.usd}</div>
+                <div class="crypto-price">&#x2BC8;$${item.market_data.current_price.usd}</div>
                 <div class="crypto-high">▲$${item.market_data.high_24h.usd}</div>
                 <div class="crypto-low">▼$${item.market_data.low_24h.usd}</div>
             </div>
